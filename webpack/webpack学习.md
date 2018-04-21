@@ -116,7 +116,7 @@ Module not found: Error: Can't resolve 'bundle.js' in '/Users/lsw/Desktop/worksp
 
    界面也能成功显示：
 
-   ![mage-20180422005904](/var/folders/3q/nx312cy54gq_9k3gk2l2fs0m0000gn/T/abnerworks.Typora/image-201804220059043.png)
+   ![l](./imgs/old.png)
 
 
 
@@ -185,7 +185,7 @@ npm run dev
 
 此时的界面就被改变了：
 
-![mage-20180422012707](/var/folders/3q/nx312cy54gq_9k3gk2l2fs0m0000gn/T/abnerworks.Typora/image-201804220127071.png)
+![e](./imgs/new.png)
 
 这个时候`./dist/main.js`就是之前两个js文件`index.js` `another.js`合并打包而成的。
 
