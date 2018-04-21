@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack -- mode production"
+  },
+  "dependencies": {
+    
+  }
+
+}
