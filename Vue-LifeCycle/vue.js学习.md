@@ -100,6 +100,36 @@
 
    ​
 
-3. ​
+3. `v-on`：
+
+   `v-on`即为js中的的事件监听，监听某个事件，当触发事件时调用指定函数，在此我们通过监听点击事件触发逆转页面中的文字：
+
+   ```Html
+   <div id="app">
+       <p>{{msg}}</p>
+       <button v-on:click="reverse">reverse</button>
+   </div>
+   ```
+
+   Js:
+
+   ```Js
+   var app = new Vue({
+           el: '#app',
+           data: {
+               msg: 'hello world',
+           },
+           methods: {
+               reverse: function () {
+                   this.msg = this.msg.split('').reverse().join('')
+                   // split方法是将一个字符串按照一定的规定拆为一个数组
+                   // reverse方法是将数组的顺序变为逆序
+                   // join方法与split方法相反，将数组中的元素组合成为一个字符串
+               }
+           }
+       })
+   ```
+
+   那么，我们在点击按钮之后就会将页面中的字符中逆转。
 
    ​
