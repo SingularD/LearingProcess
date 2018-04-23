@@ -6,20 +6,25 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
-<div id="app">
+<div id="app" v-if="display">
     <p>{{msg}}</p>
-    <button v-on:click="reverseMessage">逆转消息</button>
+    <ol>
+        <li v-for="app in apps">
+            {{app.value}}
+        </li>
+    </ol>
 </div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            msg: 'hello world'
-        },
-        methods:{
-            reverseMessage: function () {
-                this.msg = this.msg.split('').reverse().join('')
-            }
+            msg: 'hello world',
+            display: true,
+            apps: [
+                {value: "苹果"},
+                {value: "梨子"},
+                {value: "香蕉"}
+            ]
         }
     })
 </script>
