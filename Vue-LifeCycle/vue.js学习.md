@@ -254,8 +254,8 @@ __proto__:Object
 
 首先给出生命周期的官方示意图：代表了一个对象的生命周期：
 
-![mage-20180425171757](/var/folders/3q/nx312cy54gq_9k3gk2l2fs0m0000gn/T/abnerworks.Typora/image-201804251717571.png)
+![ueLifeCycl](./imgs/VueLifeCycle.png)
 
 
 
-那么我们可以看到：
+那么我们可以看到：从初始化到销毁的全过程，我现在还不能全部理解，暂时参考<https://segmentfault.com/a/1190000011381906>等我多以Vue的经验的时候再来讲解。
