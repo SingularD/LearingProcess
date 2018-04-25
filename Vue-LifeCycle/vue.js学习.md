@@ -207,3 +207,55 @@ obj.data = 'hhh'
 
 
 
+`$`用法：
+
+在官方文档上面我有一点没有看懂的$的用法，但是接下来的两个例子可以很好地解释它的用法：
+
+```html
+<div id="app">
+    <button v-on:click="say">run say</button>
+</div>
+```
+
+```js
+var obj = {
+        data: 'lisongwei'
+    };
+    var am = new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+            say: function () {
+                console.log(this.$data);
+                console.log(this.$el)
+            }
+        }
+    })
+```
+
+你将在控制台看到的是：
+
+```
+{data: "lisongwei"}
+data:"lisongwei"
+__proto__:Object
+
+
+<div id="app">
+    <button>run say</button>
+</div>
+```
+
+那么就说明通过  `$`  ，把它后面的整体全部打印出来了，这个整体可能是HTML元素，也可能是一个整体对象。在我的理解中`$`就是把实例后的全部属性。
+
+
+
+### 生命周期###
+
+首先给出生命周期的官方示意图：代表了一个对象的生命周期：
+
+![mage-20180425171757](/var/folders/3q/nx312cy54gq_9k3gk2l2fs0m0000gn/T/abnerworks.Typora/image-201804251717571.png)
+
+
+
+那么我们可以看到：
