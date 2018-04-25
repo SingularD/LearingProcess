@@ -136,9 +136,74 @@
 
 #### Vue实例####
 
+每一个Vue的应用都是`Vue`函数创建一个新的Vue实例开始的
 
+```Js
+var something = new Vue({
+    .......
+})
+```
 
+在一个Vue实例被创建后，在实例中的data总是响应式的，当data的属性值发生变化的时候，视图也会发生相应的变化，这是Vue的响应式系统。
 
+```js
+var data = { a: 1} //数据对象
+
+var vm = new Vue({
+    data: data
+})
+//将刚刚创建的数据对象传入刚刚实例的vm对象中
+
+vm.a = data.a // => true
+vm.a = 2;
+data.a // => 2
+//反之亦然
+//说明他们是双向绑定的，改变其中一个都是影响到另外的一个属性
+```
+
+需要响应式的数据绑定的话，不需要实例再被创建时有这个属性。那么如果我们我们在编程的过程中不知道要用什么属性的时候怎么办？很简单，我将所有的数据类型都赋值为空，并在实例的时候就创建好，要用的时候只需要应用它们即可：
+
+```js
+data:{
+    one: '',
+    two: [],
+    three: 0,
+    four: false,
+    five: null
+}
+```
+
+那么我们要怎么样去接触跟踪呢？使用`object.freeze()`即可：
+
+```Html
+<div id="app">
+    <button v-on:click="say">run say</button>
+</div>
+```
+
+```js
+    var obj = {
+        data: 'lisongwei'
+    };
+    Object.freeze(obj);
+    var am = new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+            say: function () {
+                console.log(this.data)
+            }
+        }
+    })
+```
+
+当你在浏览器中点击按钮之后，控制台会打印出lisongwei字样，当时你在控制台中输入：
+
+```js
+obj.data = 'hhh'
+```
+
+之后，再次点击按钮，发现am对象中的data值还是原来那个，这就很好地说明了，`Object.freeze()`方法能够阻断跟踪。
 
 
 

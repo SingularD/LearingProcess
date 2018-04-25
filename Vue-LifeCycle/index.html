@@ -7,21 +7,19 @@
 </head>
 <body>
 <div id="app">
-    <p>{{msg}}</p>
-    <button v-on:click="reverse">reverse</button>
+    <button v-on:click="say">run say</button>
 </div>
 <script>
-    var app = new Vue({
+    var obj = {
+        data: 'lisongwei'
+    };
+    Object.freeze(obj);
+    var am = new Vue({
         el: '#app',
-        data: {
-            msg: 'hello world',
-        },
+        data: obj,
         methods: {
-            reverse: function () {
-                this.msg = this.msg.split('').reverse().join('')
-                // split方法是将一个字符串按照一定的规定拆为一个数组
-                // reverse方法是将数组的顺序变为逆序
-                // join方法与split方法相反，将数组中的元素组合成为一个字符串
+            say: function () {
+                console.log(this.data)
             }
         }
     })
