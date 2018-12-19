@@ -45,4 +45,11 @@
    window.innerHeight
    ```
 
-2. ​
+
+
+改变鼠标形状
+
+css: `cursor`属性
+
+js: `element.style.cursor`
+

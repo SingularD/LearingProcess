@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changeMouse</title>
+</head>
+<style>
+    #content{
+        width: 160px;
+        height: 160px;
+        background-color: black;
+        display: block;
+        margin: 100px auto;
+    }
+</style>
+<body>
+<div id="content" onmouseover="change()" onmouseout="out()" onmousemove="this.style.cursor='crosshair'">
+    <div id="inside"></div>
+</div>
+</body>
+<script>
+    function $(ele) {
+      return document.getElementById(ele)
+    }
+    function change() {
+      $('content').style.cssText = 'background-color: #ffffff;' +
+        'border: 20px red solid;width: 120px;height: 120px';
+    }
+    function out() {
+      $('content').style.cssText = 'background-color: black;' +
+        'border: 0px'
+    }
+</script>
+</html>
