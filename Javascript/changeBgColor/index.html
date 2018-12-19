@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #content{
+        background-color: #ffffff;
+    }
+    #choice{
+        display: block;
+        width: 20%;
+        height: 20%;
+        margin: 0 auto;
+    }
+    #choice div{
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 30px;
+        margin-top: 50px;
+    }
+    #red{
+        background-color: red;
+    }
+    #green{
+        background-color: green;
+    }
+    #pink{
+        background-color: pink;
+    }
+    li{
+        list-style: none;
+        float: left;
+    }
+    #bar{
+        display: block;
+        margin: 0 auto;
+        width: 30%;
+    }
+    #bar div{
+        width: 50px;
+        border: black 1px solid;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="content">
+        <div id="choice">
+            <ul>
+                <li><div id="red" onclick="changeColor(0)"></div></li>
+                <li><div id="green" onclick="changeColor(1)"></div></li>
+                <li><div id="pink" onclick="changeColor(2)"></div></li>
+            </ul>
+        </div>
+        <div id="bar">
+            <ul>
+                <li>
+                    <div>新闻</div>
+                </li>
+                <li>
+                    <div>娱乐</div>
+                </li>
+                <li>
+                    <div>体育</div>
+                </li>
+                <li>
+                    <div>电影</div>
+                </li>
+                <li>
+                    <div>音乐</div>
+                </li>
+                <li>
+                    <div>旅游</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+      $('content').style.width = size().width + 'px';
+      $('content').style.height = size().height + 'px';
+    }
+    function $(ele) {
+      return document.getElementById(ele)
+    }
+    function size() {
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      return {width, height}
+    }
+    function changeColor(n) {
+      let colors = ['red', 'green', 'pink']
+      $('content').style.backgroundColor = colors[n];
+    }
+</script>
+</html>

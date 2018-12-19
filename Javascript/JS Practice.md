@@ -32,5 +32,17 @@
    document.getElement.style.cssText = "background-color:Blue; border:solid 1px red; width:300px; height:200px; background-position:center";
    ```
 
-   ​
 
+
+
+
+### 网站换肤
+
+1. 获取浏览器可见区域的尺寸
+
+   ```Js
+   window.innerWidth;
+   window.innerHeight
+   ```
+
+2. ​
