@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getArguments</title>
+</head>
+<style>
+#content{
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+}
+    #btn{
+        margin: 0 15%;
+    }
+</style>
+<body>
+<div id="content">
+    <div id="input">
+        <input type="text" id="input1"><br>
+        <input type="text" id="input2">
+    </div>
+    <button id="btn" onclick="getArguments()">submit</button>
+</div>
+</body>
+<script>
+    function $(ele) {
+      return document.getElementById(ele)
+    }
+    function getArguments() {
+      alert($('input1').value);
+      alert($('input2').value)
+    }
+</script>
+</html>
